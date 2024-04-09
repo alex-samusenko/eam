@@ -1,0 +1,693 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Promject.Presentation.Blazor</RootNamespace>
+    <AssemblyName>Promject.Presentation.Blazor</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Configurations>Debug;Release</Configurations>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>$(SolutionDir)\.msbuild\bin\$(Configuration)\</OutputPath>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)\.msbuild\bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(SolutionDir)\!ProductInfo\ProductInfo.cs">
+      <Link>ProductInfo.cs</Link>
+    </Compile>
+    <Compile Update="Module.cs" />
+    <Compile Update="Module.Designer.cs">
+      <DependentUpon>Module.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model.DesignedDiffs.Localization.ru.xafml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Project.Blazor\Project.Blazor.csproj" />
+    <ProjectReference Include="..\Project.Module\Project.Module.csproj" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="Xafari">
+			<HintPath>C:\gala\blazor\Xafari.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Accelerator">
+			<HintPath>C:\gala\blazor\Xafari.Accelerator.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Arms">
+			<HintPath>C:\gala\blazor\Xafari.Arms.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Arms.Win">
+			<HintPath>C:\gala\blazor\Xafari.Arms.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Audit">
+			<HintPath>C:\gala\blazor\Xafari.Audit.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC">
+			<HintPath>C:\gala\blazor\Xafari.BC.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.Audit">
+			<HintPath>C:\gala\blazor\Xafari.BC.Audit.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.Audit.Cfg">
+			<HintPath>C:\gala\blazor\Xafari.BC.Audit.Cfg.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.Audit.Triggers">
+			<HintPath>C:\gala\blazor\Xafari.BC.Audit.Triggers.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.Audit.Win">
+			<HintPath>C:\gala\blazor\Xafari.BC.Audit.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.BusinessOperations">
+			<HintPath>C:\gala\blazor\Xafari.BC.BusinessOperations.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.BusinessOperations.Arm">
+			<HintPath>C:\gala\blazor\Xafari.BC.BusinessOperations.Arm.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.BusinessOperations.Commands">
+			<HintPath>C:\gala\blazor\Xafari.BC.BusinessOperations.Commands.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.BusinessOperations.Win">
+			<HintPath>C:\gala\blazor\Xafari.BC.BusinessOperations.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.Console">
+			<HintPath>C:\gala\blazor\Xafari.BC.Console.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.DC">
+			<HintPath>C:\gala\blazor\Xafari.BC.DC.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.Numerators">
+			<HintPath>C:\gala\blazor\Xafari.BC.Numerators.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.Numerators.Cfg">
+			<HintPath>C:\gala\blazor\Xafari.BC.Numerators.Cfg.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.Numerators.DC">
+			<HintPath>C:\gala\blazor\Xafari.BC.Numerators.DC.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.Numerators.Xpo">
+			<HintPath>C:\gala\blazor\Xafari.BC.Numerators.Xpo.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.Settings">
+			<HintPath>C:\gala\blazor\Xafari.BC.Settings.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.Settings.Cfg">
+			<HintPath>C:\gala\blazor\Xafari.BC.Settings.Cfg.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.Settings.Win">
+			<HintPath>C:\gala\blazor\Xafari.BC.Settings.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.Tasks">
+			<HintPath>C:\gala\blazor\Xafari.BC.Tasks.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.Tasks.Win">
+			<HintPath>C:\gala\blazor\Xafari.BC.Tasks.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.Win">
+			<HintPath>C:\gala\blazor\Xafari.BC.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.BC.Xas">
+			<HintPath>C:\gala\blazor\Xafari.BC.Xas.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Data">
+			<HintPath>C:\gala\blazor\Xafari.Data.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.DB">
+			<HintPath>C:\gala\blazor\Xafari.DB.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Docflow">
+			<HintPath>C:\gala\blazor\Xafari.Docflow.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Docflow.Win">
+			<HintPath>C:\gala\blazor\Xafari.Docflow.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.DockPanels">
+			<HintPath>C:\gala\blazor\Xafari.DockPanels.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.DockPanels.Win">
+			<HintPath>C:\gala\blazor\Xafari.DockPanels.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Editors">
+			<HintPath>C:\gala\blazor\Xafari.Editors.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Editors.Win">
+			<HintPath>C:\gala\blazor\Xafari.Editors.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Filters">
+			<HintPath>C:\gala\blazor\Xafari.Filters.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Filters.Win">
+			<HintPath>C:\gala\blazor\Xafari.Filters.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.AspNetCore.Common">
+			<HintPath>C:\gala\blazor\Xafari.FW.AspNetCore.Common.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.AspNetCore.Core">
+			<HintPath>C:\gala\blazor\Xafari.FW.AspNetCore.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.AspNetCore.Reporting">
+			<HintPath>C:\gala\blazor\Xafari.FW.AspNetCore.Reporting.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Blazor">
+			<HintPath>C:\gala\blazor\Xafari.FW.Blazor.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Blazor.Reporting.Viewer">
+			<HintPath>C:\gala\blazor\Xafari.FW.Blazor.Reporting.Viewer.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.BonusSkins">
+			<HintPath>C:\gala\blazor\Xafari.FW.BonusSkins.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Charts.Core">
+			<HintPath>C:\gala\blazor\Xafari.FW.Charts.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.CodeParser">
+			<HintPath>C:\gala\blazor\Xafari.FW.CodeParser.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Data">
+			<HintPath>C:\gala\blazor\Xafari.FW.Data.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Data.Desktop">
+			<HintPath>C:\gala\blazor\Xafari.FW.Data.Desktop.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.DataAccess">
+			<HintPath>C:\gala\blazor\Xafari.FW.DataAccess.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.DataAccess.UI">
+			<HintPath>C:\gala\blazor\Xafari.FW.DataAccess.UI.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.DataVisualization.Core">
+			<HintPath>C:\gala\blazor\Xafari.FW.DataVisualization.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Diagram.Core">
+			<HintPath>C:\gala\blazor\Xafari.FW.Diagram.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Docs">
+			<HintPath>C:\gala\blazor\Xafari.FW.Docs.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Drawing">
+			<HintPath>C:\gala\blazor\Xafari.FW.Drawing.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.EasyTest">
+			<HintPath>C:\gala\blazor\Xafari.FW.EasyTest.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.Chart">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.Chart.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.Chart.Win">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.Chart.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.CloneObject.Xpo">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.CloneObject.Xpo.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.ConditionalAppearance">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.ConditionalAppearance.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.EasyTest.WinAdapter">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.EasyTest.WinAdapter.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.FileAttachment.Win">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.FileAttachment.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.Kpi">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.Kpi.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.Objects">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.Objects.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.Office">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.Office.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.Office.Win">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.Office.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.PivotChart">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.PivotChart.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.PivotChart.Win">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.PivotChart.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.PivotGrid">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.PivotGrid.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.PivotGrid.Win">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.PivotGrid.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.ReportsV2">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.ReportsV2.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.ReportsV2.Win">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.ReportsV2.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.Scheduler">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.Scheduler.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.Scheduler.Win">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.Scheduler.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.ScriptRecorder">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.ScriptRecorder.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.ScriptRecorder.Win">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.ScriptRecorder.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.Security">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.Security.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.Security.Xpo">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.Security.Xpo.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.StateMachine">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.StateMachine.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.TreeListEditors">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.TreeListEditors.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.TreeListEditors.Win">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.TreeListEditors.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.Validation">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.Validation.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.Validation.Win">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.Validation.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.ViewVariantsModule">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.ViewVariantsModule.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.Win">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.ExpressApp.Xpo">
+			<HintPath>C:\gala\blazor\Xafari.FW.ExpressApp.Xpo.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Images">
+			<HintPath>C:\gala\blazor\Xafari.FW.Images.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Office.Core">
+			<HintPath>C:\gala\blazor\Xafari.FW.Office.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Pdf.Core">
+			<HintPath>C:\gala\blazor\Xafari.FW.Pdf.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Pdf.Drawing">
+			<HintPath>C:\gala\blazor\Xafari.FW.Pdf.Drawing.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Persistent.Base">
+			<HintPath>C:\gala\blazor\Xafari.FW.Persistent.Base.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Persistent.BaseImpl.Xpo">
+			<HintPath>C:\gala\blazor\Xafari.FW.Persistent.BaseImpl.Xpo.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.PivotGrid.Core">
+			<HintPath>C:\gala\blazor\Xafari.FW.PivotGrid.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Printing.Core">
+			<HintPath>C:\gala\blazor\Xafari.FW.Printing.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.RichEdit.Core">
+			<HintPath>C:\gala\blazor\Xafari.FW.RichEdit.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.RichEdit.Export">
+			<HintPath>C:\gala\blazor\Xafari.FW.RichEdit.Export.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Sparkline.Core">
+			<HintPath>C:\gala\blazor\Xafari.FW.Sparkline.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.SpellChecker.Core">
+			<HintPath>C:\gala\blazor\Xafari.FW.SpellChecker.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Spreadsheet.Core">
+			<HintPath>C:\gala\blazor\Xafari.FW.Spreadsheet.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.TreeMap.Core">
+			<HintPath>C:\gala\blazor\Xafari.FW.TreeMap.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Utils">
+			<HintPath>C:\gala\blazor\Xafari.FW.Utils.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Utils.UI">
+			<HintPath>C:\gala\blazor\Xafari.FW.Utils.UI.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Web.Reporting.Common.Services">
+			<HintPath>C:\gala\blazor\Xafari.FW.Web.Reporting.Common.Services.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Web.Resources">
+			<HintPath>C:\gala\blazor\Xafari.FW.Web.Resources.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.Xpo">
+			<HintPath>C:\gala\blazor\Xafari.FW.Xpo.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraBars">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraBars.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraCharts">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraCharts.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraCharts.Extensions">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraCharts.Extensions.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraCharts.UI">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraCharts.UI.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraCharts.Wizard">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraCharts.Wizard.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraDiagram">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraDiagram.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraEditors">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraEditors.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraGantt">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraGantt.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraGauges.Core">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraGauges.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraGauges.Presets">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraGauges.Presets.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraGauges.Win">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraGauges.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraGrid">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraGrid.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraLayout">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraLayout.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraNavBar">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraNavBar.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraPdfViewer">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraPdfViewer.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraPivotGrid">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraPivotGrid.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraPrinting">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraPrinting.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraReports">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraReports.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraReports.Extensions">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraReports.Extensions.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraReports.Web">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraReports.Web.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraRichEdit">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraRichEdit.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraScheduler">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraScheduler.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraScheduler.Core">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraScheduler.Core.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraScheduler.Core.Desktop">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraScheduler.Core.Desktop.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraScheduler.Extensions">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraScheduler.Extensions.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraScheduler.Reporting">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraScheduler.Reporting.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraScheduler.Reporting.Extensions">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraScheduler.Reporting.Extensions.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraSpellChecker">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraSpellChecker.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraSpreadsheet">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraSpreadsheet.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraTreeList">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraTreeList.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraTreeMap">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraTreeMap.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraVerticalGrid">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraVerticalGrid.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.FW.XtraWizard">
+			<HintPath>C:\gala\blazor\Xafari.FW.XtraWizard.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Images">
+			<HintPath>C:\gala\blazor\Xafari.Images.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Licensing">
+			<HintPath>C:\gala\blazor\Xafari.Licensing.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.ManagedOperations">
+			<HintPath>C:\gala\blazor\Xafari.ManagedOperations.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.ManagedOperations.Cfg">
+			<HintPath>C:\gala\blazor\Xafari.ManagedOperations.Cfg.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.ManagedOperations.Win">
+			<HintPath>C:\gala\blazor\Xafari.ManagedOperations.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.MQ">
+			<HintPath>C:\gala\blazor\Xafari.MQ.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Reports">
+			<HintPath>C:\gala\blazor\Xafari.Reports.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Reports.Arm">
+			<HintPath>C:\gala\blazor\Xafari.Reports.Arm.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Reports.MQ">
+			<HintPath>C:\gala\blazor\Xafari.Reports.MQ.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Reports.MQ.Win">
+			<HintPath>C:\gala\blazor\Xafari.Reports.MQ.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Reports.Server">
+			<HintPath>C:\gala\blazor\Xafari.Reports.Server.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Reports.Win">
+			<HintPath>C:\gala\blazor\Xafari.Reports.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.ScriptRecorder">
+			<HintPath>C:\gala\blazor\Xafari.ScriptRecorder.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.ScriptRecorder.Win">
+			<HintPath>C:\gala\blazor\Xafari.ScriptRecorder.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Security">
+			<HintPath>C:\gala\blazor\Xafari.Security.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Security.Win">
+			<HintPath>C:\gala\blazor\Xafari.Security.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Security.Xpo">
+			<HintPath>C:\gala\blazor\Xafari.Security.Xpo.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Server">
+			<HintPath>C:\gala\blazor\Xafari.Server.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.SmartDesign">
+			<HintPath>C:\gala\blazor\Xafari.SmartDesign.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Utils">
+			<HintPath>C:\gala\blazor\Xafari.Utils.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Win">
+			<HintPath>C:\gala\blazor\Xafari.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Workplace">
+			<HintPath>C:\gala\blazor\Xafari.Workplace.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Workplace.Cfg">
+			<HintPath>C:\gala\blazor\Xafari.Workplace.Cfg.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.Workplace.Win">
+			<HintPath>C:\gala\blazor\Xafari.Workplace.Win.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="Xafari.XF">
+			<HintPath>C:\gala\blazor\Xafari.XF.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
+</Project>
