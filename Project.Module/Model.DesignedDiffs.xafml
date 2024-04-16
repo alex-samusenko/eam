@@ -1,3 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application>
+	<BOModel>
+		<Class Name="Project.Module.BusinessObjects.Area">
+			<Xafari>
+				<DockPanels>
+					<DockPanel Id="AreaEquipmentPanel" RelationType="Details" TargetViewType="ListView" ViewID="Equipment_ListView" DockingStyle="Float" RelationCriteria="Venue = '{0:Oid}'" Guid="3c7202d3-26e5-486d-b575-5bb2d74cd69a" IsNewNode="True" />
+					<DockPanel Id="@05d4bafb-d8e7-49fb-b27f-bc9d83aa84c7" ActionsToolbarVisibility="Show" DockingStyle="Left" AllowEdit="True" RelationType="Master" TargetViewType="ListView" RelationCriteria="Iif('{0:ByType}' == 'Все',true,'{0:ByType}' == 'Основная', TypeArea = 1, TypeArea = 0) AND Iif(IsNullOrEmpty('{0:Employee}'),true,Employee.Oid='{0:Employee.Oid}')" ViewID="AreaFilter_DetailView" Index="0" Guid="1a15b79b-4d5c-4e44-a373-d622ded64ff0" IsNewNode="True" />
+				</DockPanels>
+			</Xafari>
+		</Class>
+	</BOModel>
+	<Views>
+		<DetailView Id="AreaCustomFilter_DetailView">
+			<Layout>
+				<LayoutGroup Id="General">
+					<LayoutGroup Id="FilterByUserRoleCollection_Group" ShowCaption="False" />
+				</LayoutGroup>
+			</Layout>
+		</DetailView>
+		<DetailView Id="AreaFilter_DetailView">
+			<Items>
+				<PropertyEditor Id="Employee" Caption="Ответственный" />
+			</Items>
+		</DetailView>
+		<DetailView Id="AreaFilterExt_DetailView" ObjectCaptionFormat="">
+			<Items>
+				<PropertyEditor Id="IsEmployee" Caption="Ответственный" />
+				<PropertyEditor Id="Employees" PropertyEditorType="Xafari.Editors.Win.XafariMultipleLookupEditor" />
+				<PropertyEditor Id="Areas" PropertyEditorType="Xafari.Editors.Win.XafariMultipleLookupEditor" />
+			</Items>
+			<Layout>
+				<LayoutGroup Id="General">
+					<LayoutGroup Id="Employees_Group" ShowCaption="False">
+						<LayoutItem Id="Employees" ShowCaption="False" />
+					</LayoutGroup>
+					<LayoutGroup Id="Areas_Group" ShowCaption="False">
+						<LayoutItem Id="Areas" ShowCaption="False" />
+					</LayoutGroup>
+				</LayoutGroup>
+			</Layout>
+		</DetailView>
+	</Views>
+	<Xafari>
+		<ArmDesign>
+			<Arms>
+				<Arm Id="Активы">
+					<View Id="Area_MenuItem" View="Area_ListView" Index="0" IsNewNode="True" />
+				</Arm>
+				<Arm Id="Управляющий центр" Removed="True" />
+			</Arms>
+		</ArmDesign>
+	</Xafari>
 </Application>
